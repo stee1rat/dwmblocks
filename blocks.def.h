@@ -2,7 +2,7 @@
 static const Block blocks[] = {
     /*Icon*/        /*Command*/                                                /*Update Interval*/    /*Update Signal*/
     {" ",            "xkb-switch",                                             0,                     1},
-    {"",             "curl https://wttr.in/?format='%c:+%t'",                  600,                   0},
+    {"",             "curl https://wttr.in/?format='%c%t'",                    600,                   0},
     {"Updates: ",    "checkupdates | wc -l",                                   600,                   0},
     {"USD: ",        "printf \"%.2f\n\" $(curl -s rub.rate.sx/1USD | bc)",     1800,                  0},
     {"CPU: ",        "sensors | sed -e 's/Tdie: *\\(.*\\)  .*/\\1/;t;d'",      10,                    0},
