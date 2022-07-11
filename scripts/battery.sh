@@ -20,6 +20,6 @@ for battery in /sys/class/power_supply/BAT?*; do
 	# Will make a warn variable if discharging and low
 	[ "$status" = "D" ] && [ "$capacity" -le 25 ] && warn="!"
 	# Prints the info
-	printf "b: %s%s%d%%" "$status" "$warn" "$capacity"; unset warn
+	printf "%s%s%d%%" "$status" "$warn" "$capacity"; unset warn
 done && printf "\\n"
 
