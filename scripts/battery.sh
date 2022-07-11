@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Prints all batteries, their percentage remaining and an emoji corresponding
-# to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
+# to charge status (C for plugged up, D for discharging on battery, etc.).
 
 # Loop through all attached batteries and format the info
 for battery in /sys/class/power_supply/BAT?*; do
@@ -20,6 +20,6 @@ for battery in /sys/class/power_supply/BAT?*; do
 	# Will make a warn variable if discharging and low
 	[ "$status" = "D" ] && [ "$capacity" -le 25 ] && warn="!"
 	# Prints the info
-	printf "%s%s%d%%" "$status" "$warn" "$capacity"; unset warn
+	printf "b: %s%s%d%%" "$status" "$warn" "$capacity"; unset warn
 done && printf "\\n"
 
